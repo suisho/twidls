@@ -19,6 +19,9 @@
     "backbone.stickit": "~0.7.0"
   },
   "exportsOverride": {
+    "marionette" : {
+      "js" : "lib/core/*.js"
+    },
     "*": {
       "js": "*.js",
       "css": "*.css"
