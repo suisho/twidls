@@ -16,11 +16,15 @@
     "jquery": "~2.0.3",
     "marionette": "~1.4.1",
     "underscore": "~1.5.2",
-    "backbone.stickit": "~0.7.0"
+    "backbone.stickit": "~0.7.0",
+    "backbone.wreqr": "~0.2.0"
   },
   "exportsOverride": {
-    "marionette" : {
-      "js" : "lib/core/*.js"
+    "marionette": {
+      "js": "lib/core/*.js"
+    },
+    "backbone.wreqr" : {
+      "js": "lib/*.js"
     },
     "*": {
       "js": "*.js",
