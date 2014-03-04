@@ -3,6 +3,12 @@
   margin: 10px;
   padding: 10px;
 }
+.dropzone.dragenter{
+  background: blue;
+}
+.item{
+  background: blue
+}
 .user{
   background: blue;
 }
