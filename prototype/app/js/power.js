@@ -1,7 +1,7 @@
 (function($){
-  if (!Modernizr.draganddrop) {
+  /*if (!Modernizr.draganddrop) {
     console.log("やばいよやばいよ")
-  }
+  }*/
   var dragged = undefined;
   // drag & drop
   $(document).on("dragover", function(e){

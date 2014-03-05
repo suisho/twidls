@@ -4,6 +4,17 @@ var bower = require('gulp-bower-files');
 var clean = require('gulp-clean');
 var stylus = require('gulp-stylus')
 var concat = require('gulp-concat')
+var sass = require('gulp-sass')
+
+var srcs = {
+  "stylus" : "./stylus/**/*.styl",
+  "scss"   : "./scss/*.scss"
+}
+
+var dests = {
+  "js" : "lib/",
+  "css" : "./app/css"
+}
 
 gulp.task('bower', function() {
   var dest = 'lib/'
@@ -20,25 +31,33 @@ gulp.task('bower', function() {
 
 });
 
-var stylusSrc = './stylus/**/*.styl'
 gulp.task('stylus', function(){
-  var src = stylusSrc
+  var src = srcs["stylus"]
   var dest = "./app/css"
-
-  /*gulp.src(dest)
-    .pipe(clean());*/
   
   gulp.src(src)
     .pipe(stylus({
       //set:['compress']
+      use:['nib']
     }))
-    .pipe(concat("main.css"))
+    .pipe(concat("main_stylus.css"))
+    .pipe(gulp.dest(dest))
+})
+
+gulp.task('scss', function(){
+  var src = srcs["scss"]
+  var dest = dests["css"]
+
+  gulp.src(src)
+    .pipe(sass())
+    .pipe(concat("main_scss.css"))
     .pipe(gulp.dest(dest))
 })
 
 gulp.task('watch', function(){
-  gulp.watch(stylusSrc, ['stylus'])
+  gulp.watch(srcs["stylus"], ['stylus'])
+  gulp.watch(srcs["scss"],   ['scss'])
 })
 
-gulp.task('default', [ 'stylus', 'bower', 'watch'])
+gulp.task('default', [ 'stylus', 'scss', 'bower', 'watch'])
 

@@ -1,23 +1,25 @@
 <html>
   <head>
-    <script src="../lib/jquery/jquery.min.js"></script>
-    <script src="../lib/js/underscore/underscore-min.js"></script>
-    <script src="../lib/js/backbone/backbone-min.js"></script>
-    <script src="../lib/js/backbone.wreqr/backbone.wreqr.min.js"></script>
-    <script src="../lib/js/marionette/backbone.marionette.min.js"></script>
-    <script src="../lib/js/backbone.stickit/backbone.stickit.js"></script>
-    <script src="../lib/js/modernizr/modernizr.js"></script>
-    <script src="./js/models.js"></script>
+    <script src="../lib/js/jquery/dist/jquery.js"></script>
+    <script src="../lib/js/underscore/underscore.js"></script>
+    <script src="../lib/js/backbone/backbone.js"></script>
+    <!--script src="./js/models.js"></script>
     <script src="./js/view.js"></script>
-    <script src="./js/app.js"></script>
+    <script src="./js/app.js"></script-->
     <script src="./js/power.js"></script>
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/main_stylus.css">
+    <!--link rel="stylesheet" href="./css/main_scss.css"-->
   </head>
   <body>
     <div id="main">
+      <div class="menu">
+        <nav>
+          Tw + Ls
+        </nav>
+      </div>
       <div class="list-items dropzone item_master">
-        <div class="item" draggable="true">
-          DRAGGABLE
+        <div class="item" draggable="true" data-name="sugitaLOV">
+          <img class="icon" src="https://pbs.twimg.com/profile_images/433125654934986752/f3nJUvph_normal.jpeg">
         </div>
       </div>
       <div class="list-items dropzone">
@@ -25,15 +27,5 @@
       <div class="list-items dropzone">
       </div>
     </div>
-    <script type="template" id="user_template">
-      <div class="user" draggable="true">
-        {{name}}
-      </div>
-    </script>
-    <script>
-      $(function(){
-        App.start()
-      })
-    </script>
   </body>
 </html>
