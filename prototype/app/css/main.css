@@ -1,15 +1,15 @@
 
 .list-items {
-  background: #300;
+  background: #f00;
   margin: 10px;
   padding: 10px;
 }
 .dropzone.dragenter {
-  background: #003;
+  background: #00f;
 }
 .item {
-  background: #003;
+  background: #00f;
 }
 .user {
-  background: #003;
+  background: #00f;
 }

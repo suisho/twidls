@@ -20,13 +20,15 @@ gulp.task('bower', function() {
 
 });
 
+var stylusSrc = './stylus/**/*.styl'
 gulp.task('stylus', function(){
+  var src = stylusSrc
   var dest = "./app/css"
 
- gulp.src(dest)
-    .pipe(clean());
+  /*gulp.src(dest)
+    .pipe(clean());*/
   
-  gulp.src('./stylus/**/*.styl')
+  gulp.src(src)
     .pipe(stylus({
       //set:['compress']
     }))
@@ -34,4 +36,9 @@ gulp.task('stylus', function(){
     .pipe(gulp.dest(dest))
 })
 
-gulp.task('default', ['bower', 'stylus'])
+gulp.task('watch', function(){
+  gulp.watch(stylusSrc, ['stylus'])
+})
+
+gulp.task('default', [ 'stylus', 'bower', 'watch'])
+
