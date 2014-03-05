@@ -1,22 +1,21 @@
 var gulp  = require('gulp')
 var gulpFilter = require('gulp-filter')
-var bower = require('gulp-bower');
+var bower = require('gulp-bower-files');
 var clean = require('gulp-clean');
 
 gulp.task('bower', function() {
   var dest = 'lib/'
+  //
   gulp.src(dest)
-    .pipe(clean())
-
-  var jsFilter = gulpFilter('**/*.js', '!**/test/*');
+    .pipe(clean());
+  
+  var jsFilter = gulpFilter('**/*.js');
+  
   bower()
     .pipe(jsFilter)
-    .pipe(gulp.dest(dest + "js/"))
+    //.pipe(uglify())
+    .pipe(gulp.dest('lib/js'))
 
-  var cssFilter = gulpFilter('**/*.css');
-  bower()
-    .pipe(cssFilter)
-    .pipe(gulp.dest(dest + "css/"))
 });
 
 gulp.task('default', ['bower'])

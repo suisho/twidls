@@ -12,24 +12,9 @@
     "tests"
   ],
   "dependencies": {
-    "backbone": "~1.1.0",
-    "jquery": "~2.0.3",
-    "marionette": "~1.4.1",
-    "underscore": "~1.5.2",
-    "backbone.stickit": "~0.7.0",
-    "backbone.wreqr": "~0.2.0",
-    "modernizr": "~2.7.1"
+    "backbone": "~1.1.2",
+    "jquery": "~2.1.0",
+    "underscore": "~1.6.0"
   },
-  "exportsOverride": {
-    "marionette": {
-      "js": "lib/core/*.js"
-    },
-    "backbone.wreqr": {
-      "js": "lib/*.js"
-    },
-    "*": {
-      "js": "*.js",
-      "css": "*.css"
-    }
-  }
+  "overrides": {}
 }
