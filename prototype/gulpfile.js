@@ -8,9 +8,9 @@ var concat = require('gulp-concat')
 gulp.task('bower', function() {
   var dest = 'lib/'
   //
-  gulp.src(dest)
+  /*gulp.src(dest)
     .pipe(clean());
-  
+  */
   var jsFilter = gulpFilter('**/*.js');
   
   bower()
